@@ -1,0 +1,21 @@
+﻿@model Rating
+    @* <img id="logo" alt="logo" src={logo}></img> *@
+    <div class="center shadow-lg p-3 mb-5 bg-white rounded">
+      <h1>Add Rating</h1>
+      <form asp-action="AddRating" method="post">
+        <div className="form-floating sign">
+            <input asp-for="UserName" type="text" class="form-control" name="UserName"  placeholder="Name" required="required"/>
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div className="form-floating addRating">
+            <input asp-for="Rate" type="number" class="form-control" name="Rate" placeholder="Rating" required="required" min="1" max="5"/>
+            <span asp-validation-for="Rate"></span>
+        </div>
+         <div className="form-floating addRating">
+            <textarea asp-for="Review" type="text" class="form-control" name="Review" placeholder="discription"></textarea>
+            <span asp-validation-for="Review"></span>
+         </div>
+        <button type="submit" id="btn" class="btn btn_start btn-primary">Submit</button>
+       </form>
+     </div>
+                

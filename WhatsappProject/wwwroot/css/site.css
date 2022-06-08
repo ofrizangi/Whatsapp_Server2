@@ -1,0 +1,133 @@
+
+body {
+    width: 100%;
+    background: linear-gradient(180deg, #b29db3e2 30%,rgb(223, 221, 226) 30%);
+}
+
+.center {
+    font-family: Times New Roman;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(248, 249, 250);
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0px;
+}
+
+#search{
+margin-bottom: 10px;
+}
+.align-start{
+    text-align:start
+}
+.align-center {
+    text-align: center;
+}
+.list-group-item {
+    padding: .0rem 1rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    width:85vh;
+}
+
+.list-group {
+    align-items: center;
+}
+
+#listRating {
+    align-items: center;
+}
+.form-control {
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.scroll {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    /*height: 90vh;*/
+}
+
+.vlueRate {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.content {
+    text-align-last: left;
+    margin-top: 0;
+    display: inline-block;
+    width: 75%
+}
+
+.showRating {
+    font-size: 10pt;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+
+
+.name {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+
+#listRating {
+ 
+    padding: 0;
+   
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+
+
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: #8064A2 !important;
+    border: #8064A2;
+    color: white;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.btn {
+    border-radius: 15px;
+    /*width: 100px;*/
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+
+#root, body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0%;
+}
+

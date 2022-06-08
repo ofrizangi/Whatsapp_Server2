@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatsappProject", "WhatsappProject\WhatsappProject.csproj", "{3DA4E027-C09D-4BEF-9D1C-C4B07D3F8279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWhatsappApi", "WebWhatsapp\WebWhatsappApi.csproj", "{03183710-78B0-467A-93CB-AD38759A7475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DA4E027-C09D-4BEF-9D1C-C4B07D3F8279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA4E027-C09D-4BEF-9D1C-C4B07D3F8279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA4E027-C09D-4BEF-9D1C-C4B07D3F8279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA4E027-C09D-4BEF-9D1C-C4B07D3F8279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03183710-78B0-467A-93CB-AD38759A7475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03183710-78B0-467A-93CB-AD38759A7475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03183710-78B0-467A-93CB-AD38759A7475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03183710-78B0-467A-93CB-AD38759A7475}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3084595-BC2E-4AD2-8172-149A66815D15}
+	EndGlobalSection
+EndGlobal

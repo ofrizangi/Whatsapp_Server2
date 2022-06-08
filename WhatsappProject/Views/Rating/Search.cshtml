@@ -1,0 +1,22 @@
+﻿@using System.IO;
+@using WhatsappServer.Models;
+@model IEnumerable<Rating>
+
+
+
+<div  id="tbodyid" class="list-group list-group-flush scroll">     
+@foreach (Rating rating in Model) 
+{
+            <div class="list-group-item list-group-item-action d-flex align-items-center">
+            <span class="m-2 ms-3 content">
+                <div class='name'>@rating.UserName | @Html.DisplayNameFor(model => model.Rate): @rating.Rate</div>
+            <div>
+                <p class="disciption"> @Html.DisplayNameFor(model => model.Review): @rating.Review </p>
+                </div>
+            </span> 
+            
+           <span class='showRating'> <a asp-controller="Rating" asp-action="RatingItem" asp-route-ID=@rating.ID class="btn btn-primary">Show Rating</a> </span>
+            </div>
+}
+</div>
+</div>

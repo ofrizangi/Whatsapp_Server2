@@ -1,0 +1,15 @@
+﻿@model Rating
+
+
+    <div  class="center shadow-lg p-3 mb-5 bg-white rounded">
+    <h2>@Model.UserName</h2>
+   	<p class="align-start">@Html.DisplayNameFor(model => model.Rate): @Model.Rate</p>
+	<p  class="align-start">@Html.DisplayNameFor(model => model.Review): @Model.Review</p>
+	<p  class="align-start">@Html.DisplayNameFor(model => model.Time): @Model.Time</p>
+	<a asp-controller="Rating" asp-action="RemoveRating" asp-route-ID=@Model.ID class="btn btn-primary">Remove</a>
+	<a asp-controller="Rating" asp-action="EditRating" asp-route-ID=@Model.ID class="btn btn-primary">Edit Rating</a>
+
+     </div>
+
+
+

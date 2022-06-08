@@ -1,0 +1,18 @@
+﻿@model Rating
+
+    <div id="editItem" class="center shadow-lg p-3 mb-5 bg-white rounded">
+      <h1>Edit Rating</h1>
+      <form asp-action="EditRating" asp-route-ID=@Model.ID asp-route-UserName=@Model.UserName method="post">
+        <div className="form-floating sign">
+            <input asp-for="UserName" type="text" class="form-control" name="UserName"  placeholder="Name" required="required" disabled/>
+        </div>
+        <div className="form-floating addRating">
+            <input asp-for="Rate" type="number" class="form-control" name="Rate" placeholder="Rating" required="required" min="1" max="5"/>
+        </div>
+         <div className="form-floating addRating">
+            <textarea asp-for="Review" type="text" class="form-control" name="Review" placeholder="discription"></textarea>
+         </div>
+       <button type="submit" id="btn" class="btn btn_start btn-primary">Submit</button>
+       </form>
+     </div>
+                
