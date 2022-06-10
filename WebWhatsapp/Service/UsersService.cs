@@ -24,11 +24,11 @@ namespace WebWhatsappApi.Service
 
 
 
-        public Boolean checkIfNameExsit(string UserName)
+        public async Task<Boolean> checkIfNameExsit(string UserName)
             {
             using (var db = new WhatsappContext())
             {
-                var q = db.Users.Where(u => u.UserName == UserName);
+                var q = await db.Users.Where(u => u.UserName == UserName).ToListAsync();
                 if (q.Any())
                 {
                     return true;
@@ -37,11 +37,11 @@ namespace WebWhatsappApi.Service
             }
         }
 
-        public Boolean addUser(User user)
+        public async Task<Boolean> addUser(User user)
         {
             using (var db = new WhatsappContext())
             {
-                var q = db.Users.Where(u => u.UserName == user.UserName);
+                var q = await db.Users.Where(u => u.UserName == user.UserName).ToListAsync();
                 if (!q.Any())
                 {
                     db.Users.Add(user);
