@@ -9,17 +9,25 @@ namespace WebWhatsappApi.Firebase
     public class ClientFirebase
     {
 
+
+        static Dictionary<string, string> fireBase = new Dictionary<string, string>();
+
+        public static void addUserWithToken(String userId, String token)
+        {
+            fireBase.Add(userId, token);
+        }
+        
+
+        //AddToDB(string userId, MessagePost message, string contactName)
         public static void SendMessage()
         {
             FirebaseApp.Create(new AppOptions()
             {
                 Credential = GoogleCredential.FromFile("private_key.json")
             });
+            
 
-
-
-            var registrationToken = "f7vL1g_rzus:APA91bGkl1D5lCbDXKLzpPBa68uP5Bk4IUW6Kq67YDpfTWLnIytJ0NNG18ISEXHYlucBwG4AkGAnLiWJd_VLI_pOIpOpJZ0R4Elzjvijm5fmPXFRB_L4Y90bFfc16YILtfkYnW_TWISF";
-
+            var registrationToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXoiLCJqdGkiOiI3YzRhZGY4MS03MWZkLTRjOTgtYmY3OC01NWE2MDU3YTMzMTYiLCJpYXQiOiIxNi8wNi8yMDIyIDE0OjI5OjU1IiwiVXNlcklkIjoic2l2YW4iLCJleHAiOjE2NTUzOTI3OTUsImlzcyI6IkZvbyIsImF1ZCI6IkJhciJ9.GN_xc28uhwBU2dpqwnm-5Z_Bn92QMh7_o-B1TvYu5LE";
 
             var message = new Message()
             {
