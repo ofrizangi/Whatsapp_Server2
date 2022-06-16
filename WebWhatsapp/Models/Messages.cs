@@ -2,7 +2,7 @@
 
 namespace WebWhatsappApi
 {
-    public class Message
+    public class Messages
     {
 
         [Key]

@@ -17,7 +17,7 @@ namespace WebWhatsappApi.Service
             using (var db = new WhatsappContext())
             {
 
-                Message newMessage = new Message();
+                Messages newMessage = new Messages();
                 try
                 {
                     newMessage.Id = db.Messages.Max(x => x.Id) + 1;

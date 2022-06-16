@@ -19,13 +19,13 @@ namespace WebWhatsappApi.Models
             // key of the Items table
             modelBuilder.Entity<User>().HasKey(e => e.UserName);
             modelBuilder.Entity<Contact>().HasKey(e =>  e.Id );
-            modelBuilder.Entity<Message>().HasKey(e => e.Id);
+            modelBuilder.Entity<Messages>().HasKey(e => e.Id);
 
         }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Contact> Contacts{ get; set; }
-        public DbSet<Message> Messages { get; set; }
+        public DbSet<Messages> Messages { get; set; }
 
     }
 }

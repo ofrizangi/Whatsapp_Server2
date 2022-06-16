@@ -20,7 +20,7 @@ namespace WebWhatsappApi
         public User User { get; set; }
 
 
-        public IEnumerable<Message> Messages { get; set; }
+        public IEnumerable<Messages> Messages { get; set; }
 
 
     }

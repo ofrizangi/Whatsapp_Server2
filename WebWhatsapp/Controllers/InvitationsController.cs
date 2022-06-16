@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebWhatsappApi.Service;
 using WebWhatsappApi.Models;
+using FirebaseAdmin;
 
 namespace WebWhatsappApi.Controllers
 {
@@ -8,6 +9,7 @@ namespace WebWhatsappApi.Controllers
     [Route("api/[controller]")]
     public class InvitationsController : Controller
     {
+
         ContactService contactsService = new ContactService();
         
         [HttpPost]
@@ -17,7 +19,6 @@ namespace WebWhatsappApi.Controllers
             contactToAdd.Id = invitation.from;
             contactToAdd.Server = invitation.server;
 
-            // I didn't get the nick name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             contactToAdd.Name = invitation.from;
 
             string userId = invitation.to;

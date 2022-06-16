@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebWhatsappApi;
 using WebWhatsappApi.Service;
+using WebWhatsappApi.Firebase;
+
 
 
 namespace WebWhatsappApi.Controllers
@@ -71,6 +73,7 @@ namespace WebWhatsappApi.Controllers
                 var userId = getUserId();
                 //id is name of contact
                 messageService.AddToDB(userId, message, id);
+                ClientFirebase.SendMessage();
                 return Ok();
             }
             return BadRequest();

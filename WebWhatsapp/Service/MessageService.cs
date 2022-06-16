@@ -16,7 +16,7 @@ namespace WebWhatsappApi.Service
     {
         public int Id { get; set; }
         public string Content { get; set; }
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Created { get; set; }
         public Boolean Sent { get; set; }
     }
@@ -30,8 +30,6 @@ namespace WebWhatsappApi.Service
     {
         public List<MessagesGet> getAllMessages(string userId, string contactName)
         {
-
-
             using (var db = new WhatsappContext())
             {
                 var q = db.Contacts.
@@ -84,7 +82,7 @@ namespace WebWhatsappApi.Service
             using (var db = new WhatsappContext())
             {
                 var a = db.Contacts.FirstOrDefault(x => x.User.UserName == userId && x.ContactUserName == contactName);
-                Message newMessage = new Message();
+                Messages newMessage = new Messages();
                 try
                 {
                     newMessage.Id = db.Messages.Max(x => x.Id) + 1;
@@ -113,7 +111,7 @@ namespace WebWhatsappApi.Service
             using (var db = new WhatsappContext())
             {
 
-                Message massage = db.Messages.Find(idMessage);
+                Messages massage = db.Messages.Find(idMessage);
                 if (massage != null)
                 {
                     db.Messages.Remove(massage);
@@ -130,7 +128,7 @@ namespace WebWhatsappApi.Service
             using (var db = new WhatsappContext())
             {
 
-                Message? massage = db.Messages.Find(idMessage);
+                Messages? massage = db.Messages.Find(idMessage);
                 if (massage != null)
                 {
                     massage.Content = Updatemessage.Content;

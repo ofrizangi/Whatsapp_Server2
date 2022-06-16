@@ -10,5 +10,11 @@
         "dist/browser/signalr.min.js"
       ]
     }
-  ]
+  ,
+{
+  "provider": "unpkg",
+  "library": "socket.io-middleware-firebase-admin@0.1.0",
+  "destination": "lib/socket.io-middleware-firebase-admin/"
+}
+]
 }
