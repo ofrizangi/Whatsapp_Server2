@@ -73,7 +73,7 @@ namespace WebWhatsappApi.Controllers
                 var userId = getUserId();
                 //id is name of contact
                 messageService.AddToDB(userId, message, id);
-                ClientFirebase.SendMessage();
+                //ClientFirebase.SendMessage();
                 return Ok();
             }
             return BadRequest();
