@@ -3,6 +3,7 @@ using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using System.Collections.Generic;
 using WebWhatsappApi.Models;
+using WebWhatsappApi.Service;
 
 namespace WebWhatsappApi.Firebase
 {
@@ -14,12 +15,11 @@ namespace WebWhatsappApi.Firebase
 
         public static void addUserWithToken(String userId, String token)
         {
-            fireBase.Add(userId, token);
+            fireBase.Add(token, userId);
         }
-        
 
-        //AddToDB(string userId, MessagePost message, string contactName)
-        public static void SendMessage()
+
+        public static void SendMessage(string userId, MessagePost messagePost, string contactName)
         {
             FirebaseApp.Create(new AppOptions()
             {
@@ -27,19 +27,17 @@ namespace WebWhatsappApi.Firebase
             });
             
 
-            var registrationToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXoiLCJqdGkiOiI3YzRhZGY4MS03MWZkLTRjOTgtYmY3OC01NWE2MDU3YTMzMTYiLCJpYXQiOiIxNi8wNi8yMDIyIDE0OjI5OjU1IiwiVXNlcklkIjoic2l2YW4iLCJleHAiOjE2NTUzOTI3OTUsImlzcyI6IkZvbyIsImF1ZCI6IkJhciJ9.GN_xc28uhwBU2dpqwnm-5Z_Bn92QMh7_o-B1TvYu5LE";
+            var registrationToken = fireBase.FirstOrDefault(x => x.Value == contactName).Key;
+
 
             var message = new Message()
             {
-                Data = new Dictionary<string, string>()
-                {
-                    { "myData", "1337" },
-                },
+
                 Token = registrationToken,
                 Notification = new Notification()
                 {
-                    Title = "Test from code",
-                    Body = "Here is your test!"
+                    Title = userId,
+                    Body = messagePost.Content
                 }
             };
 
