@@ -11,6 +11,27 @@ namespace WebWhatsappApi.Firebase
     {
 
 
+        private static ClientFirebase _clientFirebase;
+
+        public static ClientFirebase GetFirebase()
+        {
+            if(_clientFirebase == null)
+            {
+                _clientFirebase = new ClientFirebase();
+            }
+            return _clientFirebase;
+        }
+
+
+        public ClientFirebase()
+        {
+            FirebaseApp.Create(new AppOptions()
+            {
+                Credential = GoogleCredential.FromFile("private_key.json")
+            });
+        }
+
+
         static Dictionary<string, string> fireBase = new Dictionary<string, string>();
 
         public static void addUserWithToken(String userId, String token)
@@ -19,33 +40,34 @@ namespace WebWhatsappApi.Firebase
         }
 
 
-        public static void SendMessage(string userId, MessagePost messagePost, string contactName)
+        public void SendMessage(string userId, MessagePost messagePost, string contactName)
         {
-            FirebaseApp.Create(new AppOptions()
-            {
-                Credential = GoogleCredential.FromFile("private_key.json")
-            });
-            
-
             var registrationToken = fireBase.FirstOrDefault(x => x.Value == contactName).Key;
 
-
-            var message = new Message()
+            if(registrationToken != null)
             {
-
-                Token = registrationToken,
-                Notification = new Notification()
+                var message = new Message()
                 {
-                    Title = userId,
-                    Body = messagePost.Content
-                }
-            };
+                    Data = new Dictionary<string, string>()
+                {
+                    { "userName", contactName },
+                },
+                    Token = registrationToken,
+                    Notification = new Notification()
+                    {
+                        Title = userId,
+                        Body = messagePost.Content
+                    }
+                };
 
-            // Send a message to the device corresponding to the provided
-            // registration token.
-            string response = FirebaseMessaging.DefaultInstance.SendAsync(message).Result;
-            // Response is a message ID string.
-            Console.WriteLine("Successfully sent message: " + response);
+                // Send a message to the device corresponding to the provided
+                // registration token.
+                string response = FirebaseMessaging.DefaultInstance.SendAsync(message).Result;
+                // Response is a message ID string.
+                Console.WriteLine("Successfully sent message: " + response);
+            }
+
+
         }
 
 
