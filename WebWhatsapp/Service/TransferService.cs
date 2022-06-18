@@ -6,17 +6,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebWhatsappApi.Service
 {
-
-
-
-
     public class TransferService
     {
         public void AddToDB(Transfer transfer)
         {
             using (var db = new WhatsappContext())
             {
-
                 Messages newMessage = new Messages();
                 try
                 {

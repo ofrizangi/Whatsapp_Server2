@@ -3,35 +3,41 @@ using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using System.Collections.Generic;
 using WebWhatsappApi.Models;
+using WebWhatsappApi.Service;
 
 namespace WebWhatsappApi.Firebase
 {
     public class ClientFirebase
     {
 
-        public static void SendMessage()
+
+        static Dictionary<string, string> fireBase = new Dictionary<string, string>();
+
+        public static void addUserWithToken(String userId, String token)
+        {
+            fireBase.Add(token, userId);
+        }
+
+
+        public static void SendMessage(string userId, MessagePost messagePost, string contactName)
         {
             FirebaseApp.Create(new AppOptions()
             {
                 Credential = GoogleCredential.FromFile("private_key.json")
             });
+            
 
-
-
-            var registrationToken = "f7vL1g_rzus:APA91bGkl1D5lCbDXKLzpPBa68uP5Bk4IUW6Kq67YDpfTWLnIytJ0NNG18ISEXHYlucBwG4AkGAnLiWJd_VLI_pOIpOpJZ0R4Elzjvijm5fmPXFRB_L4Y90bFfc16YILtfkYnW_TWISF";
+            var registrationToken = fireBase.FirstOrDefault(x => x.Value == contactName).Key;
 
 
             var message = new Message()
             {
-                Data = new Dictionary<string, string>()
-                {
-                    { "myData", "1337" },
-                },
+
                 Token = registrationToken,
                 Notification = new Notification()
                 {
-                    Title = "Test from code",
-                    Body = "Here is your test!"
+                    Title = userId,
+                    Body = messagePost.Content
                 }
             };
 
