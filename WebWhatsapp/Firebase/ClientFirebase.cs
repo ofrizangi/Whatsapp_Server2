@@ -36,7 +36,14 @@ namespace WebWhatsappApi.Firebase
 
         public static void addUserWithToken(String userId, String token)
         {
-            fireBase.Add(token, userId);
+            if (fireBase.ContainsKey(token))
+            {
+                fireBase[token] = userId;
+            }
+            else
+            {
+                fireBase.Add(token, userId);
+            }
         }
 
 
