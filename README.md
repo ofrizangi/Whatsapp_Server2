@@ -22,5 +22,5 @@ The password in the connection string of both of them is - 123456.
 
 
 ## Link to the android & react project:
-https://github.com/ofrizangi/whatsapp_android
+https://github.com/ofrizangi/whatsapp_android <br>
 https://github.com/SivanJirad/whatsapp_react
