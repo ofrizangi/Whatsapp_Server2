@@ -21,5 +21,6 @@ The password in the connection string of both of them is - 123456.
 2. Run both of the projects in the solution - WebWhatsappApi, WhatsappProject.
 
 
-## Link to the android project:
+## Link to the android & react project:
 https://github.com/ofrizangi/whatsapp_android
+https://github.com/SivanJirad/whatsapp_react
