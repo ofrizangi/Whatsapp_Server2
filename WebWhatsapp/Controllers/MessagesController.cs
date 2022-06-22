@@ -27,13 +27,14 @@ namespace WebWhatsappApi.Controllers
     public class MessagesController : Controller
     {
         MessageService messageService = new MessageService();
-        ClientFirebase firebase;
+        //ClientFirebase firebase;
 
+        /*
         public MessagesController()
         {
             firebase = ClientFirebase.GetFirebase();
         }
-
+        */
         [Authorize]
         private string getUserId()
         {
@@ -80,7 +81,7 @@ namespace WebWhatsappApi.Controllers
                 //id is name of contact
                 //AddToDB(string userId, MessagePost message, string contactName)
                 messageService.AddToDB(userId, message, id);
-                firebase.SendMessage(userId, message, id);
+                // firebase.SendMessage(userId, message, id);
                 return Ok();
             }
             return BadRequest();
